@@ -1,0 +1,39 @@
+# ============================================================
+# E-Commerce SQL Analytics — Requirements
+# ============================================================
+# This is a pure SQL project (MySQL).
+# No Python installation is needed to run the core project.
+# ============================================================
+
+# ── Required: Database Engine ─────────────────────────────
+#
+# MySQL 8.0 or higher
+# Download: https://dev.mysql.com/downloads/mysql/
+#
+# MySQL 8.0+ is mandatory for:
+#   - Window functions      → RANK(), LAG(), NTILE(), ROW_NUMBER()
+#   - Generated columns     → line_total (GENERATED ALWAYS AS ... STORED)
+#   - GROUP BY ROLLUP       → Report 12 (category subtotals)
+#   - GROUPING()            → Report 12 (grand total label logic)
+#   - CTE (WITH clause)     → Used in all 12 reports
+#   - ENUM column types     → order status, return reason, discount type
+
+
+# ── Recommended: GUI & ERD Tool ───────────────────────────
+#
+# MySQL Workbench 8.0+
+# Download: https://dev.mysql.com/downloads/workbench/
+#
+# Required to open : erd.mwb (Entity Relationship Diagram)
+# Also useful for  : running week2_query.sql, inspecting results
+
+
+# ── Optional: Python (for CSV analysis only) ──────────────
+#
+# Only needed if you want to explore the exported reports.csv
+# using Python. Install with: pip install -r requirements.txt
+
+pandas>=2.0.0                  # Load and analyse reports.csv
+jupyterlab>=4.0.0              # Notebook environment for exploration
+mysql-connector-python>=8.0.0  # Connect to MySQL directly from Python
+sqlalchemy>=2.0.0              # Python ORM / connection pooling
